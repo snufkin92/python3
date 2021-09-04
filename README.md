@@ -1,13 +1,25 @@
 いつも忘れるので備忘録
 
 # パッケージング
+
 tar.gzで固める場合
+
 ```
 $ python setup.py sdist
 ```
+
 [pipでインストールさせたい場合はこちらを参照](https://buildersbox.corp-sansan.com/entry/2019/07/11/110000)
 
-#　構文
+# 　構文
+
+## `if __name__ == '__main__'`
+インポートされた際、意図しないコードの実行を防ぐお作法  
+`__name__`は実行されているモジュール名を格納する予約語。実行しているモジュール本体の場合は`__main__`となる
+
+
+
+
+
 ## ジェネレーター(generator)
 
 シーケンスを作成する **オブジェクト**
@@ -32,24 +44,29 @@ $ python setup.py sdist
 
 1行で表現される無名（匿名）関数
 
-
 # DB
+
 ## RDB
+
 - PostgreSQL
 - sqlalchemy with sqlite
 
 ## Key-Value
+
 - dbm
 - memcache
 
 ## No-SQL
+
 - [MmongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
-サービス化していない場合は、次のコマンドで起動
+  サービス化していない場合は、次のコマンドで起動
+
 ```
 $ mongod --dbpath データの格納先
 ```
 
 ちなみにmongoシェルの起動は
+
 ```
 $ mongo
 ```
@@ -64,30 +81,35 @@ $ mongo
 |column|field|
 
 ## Big Data
- - [HBase](https://thinkit.co.jp/article/11882) ：NoSQLに分類される列志向データベース
+
+- [HBase](https://thinkit.co.jp/article/11882) ：NoSQLに分類される列志向データベース
 
 サービス化していない場合は、次のコマンドで起動
+
 ```
 $ start-hbase.sh
 ```
 
 pythonなど外部からアクセスする場合は、起動後に次のコマンドも起動
+
 ```
 $ hbase　thrift start
 ```
 
-
 シェルを起動
+
 ```
 $ hbase shell
 ```
 
 create テーブル名 カラムファミリー名
+
 ```
 > create 'qiita', 'article'
 ```
 
 データ投入
+
 ```
 > put 'qiita', 'user_1', 'article:java', 'generics'
 > put 'qiita', 'user_2', 'article:python', 'scikit-learn' 
@@ -95,6 +117,7 @@ create テーブル名 カラムファミリー名
 ```
 
 確認（この後、pythonからアクセス）
+
 ```
 hbase:***:*> scan 'qiita'
 ROW                                           COLUMN+CELL                                                                                                                          
@@ -104,18 +127,21 @@ ROW                                           COLUMN+CELL
 ```
 
 削除
+
 ```
 > disable 'qiita'
 > drop 'qiita'
 ```
 
 停止（シェルを抜けた後）
+
 ```
 $ stop-hbase.sh
 ```
 
 ## GraphDB
- - [Neo4j](https://neo4j.com/docs/api/python-driver/current/)
+
+- [Neo4j](https://neo4j.com/docs/api/python-driver/current/)
 
 初期設定
 
@@ -123,48 +149,59 @@ $ stop-hbase.sh
 |:---|:---|:---|:---|
 |neo4j|neo4j|7687|7474|
 
-
 サービス化していない場合は、次のコマンドで起動
+
 ```
 $ neo4j start
 ```
 
 停止
+
 ```
 $ neo4j stop
 ```
 
 確認
+
 ```
 $ neo4j status
 ```
 
 管理コンソール
+
 ```
 $ open http://localhost:7474
 ```
 
 # テスト
+
 ## unittest
+
 python標準のユニットテストフレームワーク
 
 ## pytest
+
 unittestより高機能なテストフレームワーク
 
 # web関連
+
 ## よく使用さえるフォーマット
+
 - xml
 - json
 
 ## rest
+
 urllib、requestsモジュールによるrest
+
 - get
 - post
 
 ## flask
+
 軽量Webアプリフレームワーク
 
-
 # 参照
+
 [第3回　MongoDBのクエリを使いこなそう](https://gihyo.jp/dev/serial/01/mongodb/0003)
 
