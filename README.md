@@ -1,5 +1,12 @@
 いつも忘れるので備忘録
 
+# パッケージング
+tar.gzで固める場合
+```
+$ python setup.py sdist
+```
+[pipでインストールさせたい場合はこちらを参照](https://buildersbox.corp-sansan.com/entry/2019/07/11/110000)
+
 #　構文
 ## ジェネレーター(generator)
 
@@ -136,6 +143,27 @@ $ neo4j status
 ```
 $ open http://localhost:7474
 ```
+
+# テスト
+## unittest
+python標準のユニットテストフレームワーク
+
+## pytest
+unittestより高機能なテストフレームワーク
+
+# web関連
+## よく使用さえるフォーマット
+- xml
+- json
+
+## rest
+urllib、requestsモジュールによるrest
+- get
+- post
+
+## flask
+軽量Webアプリフレームワーク
+
 
 # 参照
 [第3回　MongoDBのクエリを使いこなそう](https://gihyo.jp/dev/serial/01/mongodb/0003)

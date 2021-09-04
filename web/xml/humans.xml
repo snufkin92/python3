@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+    <humans>
+        <human>
+            <name>Mike</name>
+            <age>25</age>
+            <sex>M</sex>
+        </human>
+        <human>
+            <name>Jane</name>
+            <age>22</age>
+            <sex>F</sex>
+        </human>
+    </humans>
+</root>

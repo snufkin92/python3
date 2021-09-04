@@ -1,0 +1,14 @@
+{
+    "humans": [
+        {
+            "name": "Mike",
+            "age": 25,
+            "sex": "M"
+        },
+        {
+            "name": "Jane",
+            "age": 22,
+            "sex": "F"
+        }
+    ]
+}
